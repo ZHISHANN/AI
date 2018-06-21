@@ -19,26 +19,22 @@ void tearDown(void)
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-void test_string_compare_given_MuMbo_juMbO_and_mambo_Jumbo_expect_1(void)
+void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours(void)
 
 {
 
-    UnityAssertEqualNumber((UNITY_INT)((StringCompare("MuMbo juMbO", "mambo Jumbo"))), (UNITY_INT)((1)), (
+    char *ExpectedReply = "Hi there! My name is TheMachine. What is yours?";
+
+    char *Reply = SpeakToAIMachine("hi");
+
+
+
+    UnityAssertEqualString((const char*)((ExpectedReply)), (const char*)((Reply)), (
 
    ((void *)0)
 
-   ), (UNITY_UINT)(20), UNITY_DISPLAY_STYLE_INT);
+   ), (UNITY_UINT)(44));
+
+
 
 }

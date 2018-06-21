@@ -1,0 +1,16 @@
+---
+:source:
+  :path: test
+  :file: test_AI.c
+:successes:
+- :test: test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours
+  :line: 39
+  :message: ''
+:failures: []
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 1
+  :failed: 0
+  :ignored: 0
+:stdout: []
