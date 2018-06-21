@@ -1,0 +1,16 @@
+---
+:source:
+  :path: test
+  :file: test_AI.c
+:successes: []
+:failures:
+- :test: test_string_compare_given_MuMbo_juMbO_and_mambo_Jumbo_expect_1
+  :line: 20
+  :message: Expected 0 Was 1
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 0
+  :failed: 1
+  :ignored: 0
+:stdout: []
