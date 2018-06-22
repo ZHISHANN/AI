@@ -40,7 +40,15 @@ void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_
 {
     char  *ExpectedReply = "Hi there! My name is TheMachine. What is yours?";
     char  *Reply = SpeakToAIMachine("hi");
-    
+
     TEST_ASSERT_EQUAL_STRING (ExpectedReply,Reply);
     //free (Reply);
 }
+
+/*void test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan(void)
+{
+    char  *ExpectedReply = "Nice to meet you, Shan";
+    char  *Reply = SpeakToAIMachine("My name is Shan");
+
+    TEST_ASSERT_EQUAL_STRING (ExpectedReply,Reply);
+}*/

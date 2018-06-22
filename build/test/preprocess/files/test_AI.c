@@ -25,7 +25,7 @@ void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_
 
     char *ExpectedReply = "Hi there! My name is TheMachine. What is yours?";
 
-    char *Reply = SpeakToAIMachine("hi");
+    char *Reply = SpeakToAIMachine("hello");
 
 
 
