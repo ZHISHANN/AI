@@ -1,0 +1,16 @@
+---
+:source:
+  :path: test
+  :file: test_AI.c
+:successes: []
+:failures:
+- :test: test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan
+  :line: 54
+  :message: Expected 'Nice to meet you,Shan' Was NULL
+:ignores: []
+:counts:
+  :total: 1
+  :passed: 0
+  :failed: 1
+  :ignored: 0
+:stdout: []

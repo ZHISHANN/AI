@@ -30,7 +30,7 @@ char* GlobalOrderError;
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours(void);
+extern void test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan(void);
 
 
 /*=======Test Reset Option=====*/
@@ -46,7 +46,7 @@ void resetTest(void)
 int main(void)
 {
   UnityBegin("test_AI.c");
-  RUN_TEST(test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours, 39);
+  RUN_TEST(test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan, 49);
 
   return (UnityEnd());
 }

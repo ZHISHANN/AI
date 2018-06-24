@@ -19,13 +19,13 @@ void tearDown(void)
 
 }
 
-void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours(void)
+void test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan(void)
 
 {
 
-    char *ExpectedReply = "Hi there! My name is TheMachine. What is yours?";
+    char *ExpectedReply = "Nice to meet you,Shan";
 
-    char *Reply = SpeakToAIMachine("hello");
+    char *Reply = SpeakToAIMachine("My name is Shan");
 
 
 
@@ -33,8 +33,6 @@ void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_
 
    ((void *)0)
 
-   ), (UNITY_UINT)(44));
-
-
+   ), (UNITY_UINT)(54));
 
 }

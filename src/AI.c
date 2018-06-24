@@ -1,6 +1,7 @@
 #include "AI.h"
 #include <string.h>
 #include <ctype.h>
+#include <malloc.h>
 
 int StringCompare(char *str1, char *str2)
 {
@@ -23,51 +24,88 @@ int StringCompare(char *str1, char *str2)
 
 char *SpeakToAIMachine(char *msg)
 {
-  while (*msg != '\0')
-  {
-    tolower(*msg);
-    msg++;
-  }
+	char *name, *reply;
 
-  if (strcmp(msg,"hi") || strcmp(msg,"hello") || strcmp(msg,"hey") )
-    return "Hi there! My name is TheMachine. What is yours?";
-  else
-		return 0;
+  /*if (StringCompare(msg, "hi") || StringCompare(msg, "hello") || StringCompare(msg, "hey") )
+		return "Hi there! My name is TheMachine. What is yours?";
+	else
+		return "Invalid..";*/
 
 	if (StringContains(msg,"My name is"))
 	{
-		name = ExtracName(msg);
+		name = ExtractName(msg);
 		reply = ConcantenateStrings("Nice to meet you,",name);
 		return reply;
 	}
+
+	if(StringCompare(msg,"Bye"))
+		return "Goodbye Have A Nice Day";
 }
 
-char ExtracName(char *msg)
+int StringContains(char *msg, char *ans)
+{
+	char *temp = msg;
+	int len = LengthOfMsg(msg);
+	char *str;
+	str = malloc(len + 1);
+	int i;
+
+	for(i = 0 ; i < 10 ; i++)
+	{
+		str[i] = *temp;
+		temp++;
+	}
+
+	str[len + 1] = '\0';
+
+	if (StringCompare(str,ans))
+		return 1;
+
+	//free(str);
+}
+
+char *ExtractName(char *msg)
 {
 	int count = LengthOfMsg(msg);
-	char *name,*temp_name;
-	temp_name = malloc(count + 1);
-	name = malloc(count + 1);
+	int i,j;
+	int len = count + 1;
+	char *E_name = msg;
+	char *temp_name;
+	temp_name = malloc(len);
 
-	for(i = 0 ; i < count + 1 ; i++)
-	{
-		strcpy(temp_name[i],name[12 + i]);
-	}
-	return temp_name;            //return the name as written
+	for(i = 0; i <= 10 ; i++)
+		E_name++;
+
+	for(j = i; j < len ; j++)
+		temp_name[j] = E_name[j];
+
+	//temp_name[count] = '\0';
+
+	return temp_name;
+	//free(temp_name);
 }
 
 int LengthOfMsg(char *msg)
 {
 	int length = 0;
 
-	if (msg[length] != '\0')
+	while(msg[length] != '\0')
 		length++;
 		return length;
 }
 
-char ConcantenateStrings(*msg)
+char *ConcantenateStrings(char *greeting, char *r_name)
 {
-	int i = 0;
-	
+	int i;
 
+	for(i = 0; i <= 16 ; i++)
+		greeting++;
+
+	while(*r_name)
+	{
+		*greeting = *r_name;
+		r_name++;
+		greeting++;
+	}
+	return greeting;
 }
