@@ -61,28 +61,30 @@ int StringContains(char *msg, char *ans)
 	if (StringCompare(str,ans))
 		return 1;
 
-	//free(str);
+	free(str);
 }
 
 char *ExtractName(char *msg)
 {
 	int count = LengthOfMsg(msg);
-	int i,j;
-	int len = count + 1;
-	char *E_name = msg;
+	int i;
+	int len = count - 10;
+	//char *E_name = msg;
 	char *temp_name;
 	temp_name = malloc(len);
 
-	for(i = 0; i <= 10 ; i++)
-		E_name++;
+	//for(i = 0; i <= 10 ; i++)
+	msg = (msg + 11);
 
-	for(j = i; j < len ; j++)
-		temp_name[j] = E_name[j];
+	for(i = 0; i < len ; i++)
+	{
+			temp_name[i] = *msg;
+			msg++;
+	}
 
-	//temp_name[count] = '\0';
+	temp_name[len] = '\0';
 
 	return temp_name;
-	//free(temp_name);
 }
 
 int LengthOfMsg(char *msg)
@@ -97,15 +99,23 @@ int LengthOfMsg(char *msg)
 char *ConcantenateStrings(char *greeting, char *r_name)
 {
 	int i;
+	int len1 = LengthOfMsg(greeting);
+	//int len2 = LengthOfMsg(r_name);
+	char *temp_cs;
+	temp_cs = malloc(256);
 
-	for(i = 0; i <= 16 ; i++)
-		greeting++;
-
-	while(*r_name)
+	for(i = 0; i <= len1 ; i++)
 	{
-		*greeting = *r_name;
-		r_name++;
+		temp_cs[i] = *greeting;
 		greeting++;
 	}
-	return greeting;
+
+	while(*r_name != '\0')
+	{
+		temp_cs[i] = *r_name;
+		r_name++;
+		i++;
+	}
+	temp_cs[i + 1] = '\0';
+	return temp_cs;
 }

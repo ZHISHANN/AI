@@ -23,7 +23,7 @@ void test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan(vo
 
 {
 
-    char *ExpectedReply = "Nice to meet you,Shan";
+    char *ExpectedReply = "Nice to meet you,";
 
     char *Reply = SpeakToAIMachine("My name is Shan");
 
