@@ -3,14 +3,35 @@
   :path: test
   :file: test_AI.c
 :successes:
+- :test: test_string_compare_given_Hello_and_Hello_expect_1
+  :line: 15
+  :message: ''
+- :test: test_string_compare_given_MaMbo_juMbO_and_mambo_Jumbo_expect_1
+  :line: 20
+  :message: ''
+- :test: test_string_compare_given_Rambo_and_Rambu_expect_0
+  :line: 25
+  :message: ''
+- :test: test_string_compare_given_Hello_and_Hell_expect_0
+  :line: 30
+  :message: ''
+- :test: test_string_compare_given_Hell_and_Hello_expect_0
+  :line: 35
+  :message: ''
+- :test: test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours
+  :line: 40
+  :message: ''
 - :test: test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan
   :line: 49
+  :message: ''
+- :test: test_speakToAIMachine_Given_Bye_expect_Goodbye_Have_A_Nice_Day
+  :line: 57
   :message: ''
 :failures: []
 :ignores: []
 :counts:
-  :total: 1
-  :passed: 1
+  :total: 8
+  :passed: 8
   :failed: 0
   :ignored: 0
 :stdout: []

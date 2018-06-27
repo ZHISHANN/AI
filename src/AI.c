@@ -66,6 +66,8 @@ char *SpeakToAIMachine_3(char *msg)
 {
   if(StringCompare(msg,"Bye"))
 		return "Goodbye Have A Nice Day";
+  else 
+    return "Invalid";
 }
 
 char *ExtractName(char *msg)
