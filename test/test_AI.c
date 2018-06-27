@@ -40,7 +40,7 @@ void test_string_compare_given_Hell_and_Hello_expect_0(void)
 /*void test_speakToAIMachine_Given_Hello_Hi_Hey_Greetings_expect_Hi_there_my_name_is_themachine_What_is_yours(void)
 {
     char  *ExpectedReply = "Hi there! My name is TheMachine. What is yours?";
-    char  *Reply = SpeakToAIMachine("hello");
+    char  *Reply = SpeakToAIMachine_1("hello");
 
     TEST_ASSERT_EQUAL_STRING (ExpectedReply,Reply);
     //free (Reply);
@@ -49,7 +49,7 @@ void test_string_compare_given_Hell_and_Hello_expect_0(void)
 void test_speakToAIMachine_Given_My_name_is_Shan_expect_Nice_to_meet_you_Shan(void)
 {
     char  *ExpectedReply = "Nice to meet you,Shan";
-    char  *Reply = SpeakToAIMachine("My name is Shan");
+    char  *Reply = SpeakToAIMachine_2("My name is Shan");
 
     TEST_ASSERT_EQUAL_STRING (ExpectedReply,Reply);
 }

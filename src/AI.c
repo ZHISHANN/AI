@@ -15,31 +15,15 @@ int StringCompare(char *str1, char *str2)
     else
       return 0;
   }
-
-  if (str1 == '\0' && str2 == '\0')
-    return 0;
-  else
-    return 1;
+  return 1;
 }
 
-char *SpeakToAIMachine(char *msg)
+char *SpeakToAIMachine_1(char *msg)
 {
-	char *name, *reply;
-
-  /*if (StringCompare(msg, "hi") || StringCompare(msg, "hello") || StringCompare(msg, "hey") )
+  if (StringCompare(msg, "hi") || StringCompare(msg, "hello") || StringCompare(msg, "hey") )
 		return "Hi there! My name is TheMachine. What is yours?";
 	else
-		return "Invalid..";*/
-
-	if (StringContains(msg,"My name is"))
-	{
-		name = ExtractName(msg);
-		reply = ConcantenateStrings("Nice to meet you,",name);
-		return reply;
-	}
-
-	if(StringCompare(msg,"Bye"))
-		return "Goodbye Have A Nice Day";
+		return "Invalid..";
 }
 
 int StringContains(char *msg, char *ans)
@@ -56,12 +40,32 @@ int StringContains(char *msg, char *ans)
 		temp++;
 	}
 
-	str[len + 1] = '\0';
+	str[i] = '\0';
 
 	if (StringCompare(str,ans))
 		return 1;
+  else 
+    return 0;
 
-	free(str);
+	//free(str);
+}
+
+char *SpeakToAIMachine_2(char *msg)
+{
+  char *name, *reply;
+  
+  if (StringContains(msg,"My name is"))
+	{
+		name = ExtractName(msg);
+		reply = ConcantenateStrings("Nice to meet you,",name);
+		return reply;
+	}
+}
+
+char *SpeakToAIMachine_3(char *msg)
+{
+  if(StringCompare(msg,"Bye"))
+		return "Goodbye Have A Nice Day";
 }
 
 char *ExtractName(char *msg)
@@ -104,7 +108,7 @@ char *ConcantenateStrings(char *greeting, char *r_name)
 	char *temp_cs;
 	temp_cs = malloc(256);
 
-	for(i = 0; i <= len1 ; i++)
+	for(i = 0; i < len1 ; i++)
 	{
 		temp_cs[i] = *greeting;
 		greeting++;
@@ -116,6 +120,6 @@ char *ConcantenateStrings(char *greeting, char *r_name)
 		r_name++;
 		i++;
 	}
-	temp_cs[i + 1] = '\0';
+	temp_cs[i] = '\0';
 	return temp_cs;
 }
